@@ -9,7 +9,7 @@ $password = md5($password.$salt);
 $results = $mysql->query("SELECT * FROM `myguests` WHERE `username` = '$username' AND `password` = '$password'");
 $user 	 = $results->fetch(PDO::FETCH_ASSOC);
 
-if(count($user) == 0 ) {
+if(count($user) === 0) {
     echo "Неверный логин или пароль";
     exit();
 } else {
